@@ -11,7 +11,7 @@ export function Navbar() {
                     Sobre
                 </Link>
                 <Link href="/">
-                    Skills
+                    Stacks
                 </Link>
                 <Link href="/">
                     Projetos

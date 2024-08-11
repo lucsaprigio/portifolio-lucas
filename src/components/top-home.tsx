@@ -5,7 +5,8 @@ export function TopHome() {
     return (
         <main className="flex flex-row items-center justify-around px-14 py-14">
             <div className="flex flex-col w-full p-10 justify-center space-y-5">
-                <strong className="text-3xl">Lucas Aprigio</strong>
+                <span>Olá, me chamo</span>
+                <strong className="text-3xl">Lucas Aprigio 👋</strong>
                 <div className="border-b-2 border-lime-300 w-32" />
                 <span className="text-md">
                     Sou formado em Análise e Desenvolvimento de Sistemas e comecei minha jornada profissional focado na criação de sites.
