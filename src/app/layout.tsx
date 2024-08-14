@@ -12,7 +12,7 @@ const roboto = Roboto({
 
 
 export const metadata: Metadata = {
-  title: "Portifolio Lucas",
+  title: "Portifolio Lucas Aprigio",
   description: "Portifolio criado para demonstrações de serviços",
 };
 
@@ -30,6 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
