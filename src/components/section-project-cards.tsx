@@ -75,7 +75,7 @@ function SectionProjectCard({ title, image, children, site }: Props) {
                 </div>
                 <div className="absolute w-0 overflow-hidden opacity-0 px-2" ref={textRef}>
                     <div className="flex flex-col gap-6">
-                        <h2 className="text-2xl font-bold">
+                        <h2 className="text-1xl font-bold">
                             Tecnologias utilizadas
                         </h2>
                         <div className="flex flex-wrap gap-2">

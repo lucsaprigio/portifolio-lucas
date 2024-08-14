@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 
-const roboto = Roboto({
+const firaCode = Fira_Code({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 })
+
 
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} bg-primary text-gray-100`}>
+      <body className={`${firaCode.className} bg-gradient-to-b from-slate-900 to-slate-800 text-gray-100`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

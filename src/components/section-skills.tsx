@@ -1,15 +1,16 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Image from "next/image";
+
 import delphiSvg from "../../public/delphi.svg";
 import javaSvg from "../../public/java.svg";
 import nextSvg from "../../public/nextjs.svg";
 import reactSvg from "../../public/react.svg";
 import nodejs from "../../public/nodejs.svg";
 import typescriptSvg from "../../public/typescript.svg";
-import Image from "next/image";
 
 export function SectionSkills() {
     return (
-        <main className="flex flex-col h-screen p-3">
+        <main className="flex flex-col p-8">
             <div className="flex flex-col items-center justify-center w-full space-y-2">
                 <strong className="text-3xl text-center">Tecnologias  💻</strong>
                 <span>Iniciei meus estudos em 2020 com Javascript, e até então aprendi as tecnologias abaixo.</span>
