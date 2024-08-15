@@ -10,7 +10,7 @@ import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Speed Restaurante | L Aprigio Tech',
+    title: 'Speed Restaurante | LATech',
     description: 'Speed Restaurante',
 }
 

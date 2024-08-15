@@ -11,8 +11,8 @@ const firaCode = Fira_Code({
 })
 
 export const metadata: Metadata = {
-  title: "L Aprigio Tech",
-  description: "Portifolio criado para demonstrações de serviços",
+  title: "LATech",
+  description: "Desenvolvimento de sistemas e Tecnologia da informação",
 };
 
 export default function RootLayout({

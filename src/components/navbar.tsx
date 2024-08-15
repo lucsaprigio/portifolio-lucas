@@ -16,7 +16,7 @@ export function Navbar() {
                     className="w-24 object-fill"
                 />
                 <span>
-                    Lucas Aprigio
+                    LAtech
                 </span>
             </Link>
             <div className="space-x-14 text-xl max-[868px]:hidden">
