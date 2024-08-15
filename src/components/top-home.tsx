@@ -7,7 +7,7 @@ import { ButtonScroll } from "./button-scroll";
 
 export function TopHome() {
     return (
-        <main className="flex flex-row items-center justify-around px-20 py-32" id="sobre">
+        <main className="flex flex-row items-center justify-around px-20 py-32 max-lg:flex-col max-lg:p-1" id="sobre">
             <div className="flex flex-col p-10 w-full items-center justify-center space-y-3">
                 <Image
                     className="border-2 border-lime-300 p-1 rounded-full"
@@ -17,15 +17,30 @@ export function TopHome() {
                     src="https://github.com/lucsaprigio.png"
                     alt="Imagem"
                 />
-                <div className="flex space-x-10">
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.instagram.com/lucsaprigio/">
+                <div className="flex space-x-10 max-lg:hidden">
+                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.instagram.com/lucsaprigio/" target="blank">
                         <FaInstagram size={24} />
                     </Link>
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.linkedin.com/in/lucas-aprigio-3b17521a5/">
+                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.linkedin.com/in/lucas-aprigio-3b17521a5/" target="blank">
                         <FaLinkedin size={24} />
                     </Link>
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://github.com/lucsaprigio">
+                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://github.com/lucsaprigio" target="blank">
                         <FaGithub size={24} />
+                    </Link>
+                </div>
+                <div className="flex space-x-10 md:hidden">
+                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.instagram.com/lucsaprigio/" target="blank">
+                        <FaInstagram size={32} />
+                        <span>Instagram</span>
+                    </Link>
+                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.linkedin.com/in/lucas-aprigio-3b17521a5/" target="blank">
+                        <FaLinkedin size={32} />
+                        <span>Linkedin</span>
+
+                    </Link>
+                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://github.com/lucsaprigio" target="blank">
+                        <FaGithub size={32} />
+                        <span>Github</span>
                     </Link>
                 </div>
             </div>
@@ -40,15 +55,20 @@ export function TopHome() {
                 </span>
                 <div className="flex gap-4 mt-3">
                     <ButtonScroll targedDiv="contato">
-                        <Button className="w-40 font-bold hover:brightness-75 duration-100 transition-all" variant="lime">
-                            Contato
-                        </Button>
+                        <div className="w-40 font-bold hover:brightness-75 duration-100 transition-all bg-lime-300 p-1 rounded-md text-zinc-950">
+                            <span >
+                                Contato
+                            </span>
+                        </div>
                     </ButtonScroll>
                     <ButtonScroll targedDiv="projetos">
-                        <Button className="w-40 font-bold" variant="accent">
-                            Projetos
-                        </Button>
+                        <div className="w-40 font-bold hover:brightness-75 hover:bg-gray-50 hover:text-zinc-950 duration-100 transition-all border-[1px] p-1 rounded-md">
+                            <span >
+                                Projetos
+                            </span>
+                        </div>
                     </ButtonScroll>
+
                 </div>
             </div>
         </main>

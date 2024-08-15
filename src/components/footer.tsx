@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import logoSvg from "../../public/logo-fundo.svg";
+import logoSvg from "../../public/logo.png";
 import { ButtonScroll } from "./button-scroll";
 import { ArrowUp } from "lucide-react";
 
@@ -20,7 +20,7 @@ export function Footer() {
             <div>
                 <ButtonScroll targedDiv="home">
                     <div className="flex w-full items-center justify-center text-sm text-right mt-10 gap-3">
-                        <ArrowUp size={18}/>
+                        <ArrowUp size={18} />
                         <span>Voltar para o topo</span>
                     </div>
                 </ButtonScroll>

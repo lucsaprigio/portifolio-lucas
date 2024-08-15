@@ -1,9 +1,10 @@
 'use client'
 
 import Link from "next/link";
-import logoSvg from "../../public/logo-fundo.svg";
+import logoSvg from "../../public/logo.png";
 import Image from "next/image";
 import { ButtonScroll } from "./button-scroll";
+import { MenuDropdown } from "./menu-dropdown";
 
 export function Navbar() {
     return (
@@ -35,6 +36,9 @@ export function Navbar() {
                     Contato
                     <span className="absolute -inset-x-[4.7rem] h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
                 </ButtonScroll>
+            </div>
+            <div className="mt-2 mr-10 min-[868px]:hidden">
+                <MenuDropdown />
             </div>
         </main>
     )
