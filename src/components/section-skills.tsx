@@ -1,3 +1,4 @@
+'use client'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Image from "next/image";
 
@@ -10,10 +11,10 @@ import typescriptSvg from "../../public/typescript.svg";
 
 export function SectionSkills() {
     return (
-        <main className="flex flex-col p-8">
+        <main id="stacks" className="flex flex-col p-8">
             <div className="flex flex-col items-center justify-center w-full space-y-2">
                 <strong className="text-3xl text-center">Tecnologias  💻</strong>
-                <span>Iniciei meus estudos em 2020 com Javascript, e até então aprendi as tecnologias abaixo.</span>
+                <span>Iniciei meus estudos em 2020 com JavaScript e, desde então, expandi meu conhecimento para diversas tecnologias, incluindo as listadas abaixo.</span>
             </div>
             <div className="grid grid-cols-1 p-20">
                 <Accordion type="single" collapsible className="space-y-8">

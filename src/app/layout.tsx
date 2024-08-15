@@ -10,10 +10,8 @@ const firaCode = Fira_Code({
   display: 'swap',
 })
 
-
-
 export const metadata: Metadata = {
-  title: "Portifolio Lucas Aprigio",
+  title: "L Aprigio Tech",
   description: "Portifolio criado para demonstrações de serviços",
 };
 

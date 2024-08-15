@@ -1,10 +1,13 @@
+'use client'
+
 import Link from "next/link";
 import logoSvg from "../../public/logo-fundo.svg";
 import Image from "next/image";
+import { ButtonScroll } from "./button-scroll";
 
 export function Navbar() {
     return (
-        <main className="flex items-center justify-around p-7 shadow-sm">
+        <main id="home" className="flex items-center justify-around p-7 shadow-sm">
             <Link className="flex items-center hover:scale-110 duration-150" href="/">
                 <Image
                     src={logoSvg}
@@ -15,19 +18,23 @@ export function Navbar() {
                     Lucas Aprigio
                 </span>
             </Link>
-            <div className="space-x-14 text-xl">
-                <Link href="/">
+            <div className="space-x-14 text-xl max-[868px]:hidden">
+                <ButtonScroll targedDiv="sobre">
                     Sobre
-                </Link>
-                <Link href="/">
+                    <span className="absolute -inset-x-14 h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
+                </ButtonScroll>
+                <ButtonScroll targedDiv="stacks">
                     Stacks
-                </Link>
-                <Link href="/">
+                    <span className="absolute -inset-x-16 h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
+                </ButtonScroll>
+                <ButtonScroll targedDiv="projetos">
                     Projetos
-                </Link>
-                <Link href="/">
+                    <span className="absolute -inset-x-[5.4rem] h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
+                </ButtonScroll>
+                <ButtonScroll targedDiv="contato">
                     Contato
-                </Link>
+                    <span className="absolute -inset-x-[4.7rem] h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
+                </ButtonScroll>
             </div>
         </main>
     )
