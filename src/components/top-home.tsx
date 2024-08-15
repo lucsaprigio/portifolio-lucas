@@ -55,14 +55,14 @@ export function TopHome() {
                 </span>
                 <div className="flex gap-4 mt-3">
                     <ButtonScroll targedDiv="contato">
-                        <div className="w-40 font-bold hover:brightness-75 duration-100 transition-all bg-lime-300 p-1 rounded-md text-zinc-950">
-                            <span >
+                        <div className="md:w-40 font-bold hover:brightness-75 duration-100 transition-all bg-lime-300 p-1 rounded-md text-zinc-950">
+                            <span>
                                 Contato
                             </span>
                         </div>
                     </ButtonScroll>
                     <ButtonScroll targedDiv="projetos">
-                        <div className="w-40 font-bold hover:brightness-75 hover:bg-gray-50 hover:text-zinc-950 duration-100 transition-all border-[1px] p-1 rounded-md">
+                        <div className="md:w-40 font-bold hover:brightness-75 hover:bg-gray-50 hover:text-zinc-950 duration-100 transition-all border-[1px] p-1 rounded-md">
                             <span >
                                 Projetos
                             </span>
