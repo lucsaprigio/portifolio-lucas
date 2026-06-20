@@ -1,6 +1,6 @@
 'use client'
 import Image, { StaticImageData } from "next/image";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
 
@@ -17,6 +17,7 @@ type TextProps = {
 
 function SectionProjectCard({ title, image, children, site }: Props) {
     const animationCardDiv = useRef<any | null>(null);
+    const [isOpen, setIsOpen] = useState(false);
 
     const cardRef = useRef(null);
     const textRef = useRef(null);
@@ -54,18 +55,41 @@ function SectionProjectCard({ title, image, children, site }: Props) {
 
     function animationXStart() {
         animationCardDiv.current.play();
+        setIsOpen(true);
     };
 
     function animationXReverse() {
         animationCardDiv.current.reverse();
+        setIsOpen(false);
     };
+
+    // Em telas touch não existe hover, então o próprio card funciona como gatilho de toque,
+    // alternando entre mostrar a capa e o painel de tecnologias/link.
+    function handleTap() {
+        if (isOpen) {
+            animationXReverse();
+        } else {
+            animationXStart();
+        }
+    }
 
     return (
         <section className="flex items-center justify-center gap-1 rounded-lg">
             <div
                 onMouseEnter={animationXStart}
                 onMouseLeave={animationXReverse}
-                className="group relative z-10 flex h-60 w-80 flex-row items-center justify-center gap-2 overflow-hidden rounded-xl border border-lime-300/30 bg-zinc-950/60 p-2 shadow-[0_8px_30px_rgb(0,0,0,0.25)] backdrop-blur-sm transition-all duration-300 hover:border-lime-300/70 hover:shadow-[0_0_30px_rgba(190,242,100,0.15)]"
+                onClick={handleTap}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isOpen}
+                aria-label={`${title}: ver tecnologias utilizadas`}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleTap();
+                    }
+                }}
+                className="group relative z-10 flex h-60 w-[min(20rem,calc(100vw-3rem))] flex-row items-center justify-center gap-2 overflow-hidden rounded-xl border border-lime-300/30 bg-zinc-950/60 p-2 shadow-[0_8px_30px_rgb(0,0,0,0.25)] backdrop-blur-sm transition-all duration-300 hover:border-lime-300/70 hover:shadow-[0_0_30px_rgba(190,242,100,0.15)] cursor-pointer md:cursor-default"
                 ref={cardRef}
             >
                 <div className="relative flex h-full w-full items-center justify-start p-3">
@@ -92,6 +116,7 @@ function SectionProjectCard({ title, image, children, site }: Props) {
                                 href={site}
                                 target={site.startsWith("/") ? undefined : "_blank"}
                                 rel={site.startsWith("/") ? undefined : "noopener noreferrer"}
+                                onClick={(event) => event.stopPropagation()}
                             >
                                 Acessar
                             </Link>

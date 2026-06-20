@@ -24,7 +24,7 @@ export function Navbar() {
         <main
             id="home"
             className={cn(
-                "sticky top-0 z-50 flex items-center justify-around px-7 py-4 transition-all duration-300",
+                "sticky top-0 z-50 flex items-center justify-between gap-4 px-4 py-4 sm:px-7 md:justify-around transition-all duration-300",
                 isScrolled
                     ? "glass-panel border-b shadow-lg"
                     : "border-b border-transparent bg-transparent"
@@ -58,7 +58,7 @@ export function Navbar() {
                     <span className="absolute -inset-x-[4.7rem] h-0.5 bottom-0 w-full group-hover/link:border-b-0 group-hover/link:translate-x-full group-hover/link:bg-lime-300 border-lime-300 transition-transform duration-700" />
                 </ButtonScroll>
             </div>
-            <div className="mt-1 mr-10 min-[868px]:hidden">
+            <div className="flex items-center min-[868px]:hidden">
                 <MenuDropdown />
             </div>
         </main>

@@ -49,9 +49,15 @@ export function Header() {
         <main
             id="header"
             ref={containerRef}
-            className="relative flex flex-col items-center justify-center gap-8 overflow-hidden bg-[url('/background.png')] bg-cover bg-no-repeat px-6 py-28 text-center after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-background after:opacity-90 md:py-36"
+            className="relative flex flex-col items-center justify-center gap-8 overflow-hidden px-6 py-28 text-center md:py-36"
         >
+            {/* Sem fundo opaco: o campo de estrelas animado global (StarfieldBackground) aparece aqui também. */}
             <div className="bg-grid mask-fade-bottom absolute inset-0 z-0 opacity-40" aria-hidden="true" />
+            {/* Brilho radial sutil em lime, dando profundidade atrás do logo */}
+            <div
+                className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(190,242,100,0.10),transparent_60%)]"
+                aria-hidden="true"
+            />
 
             <span className="hero-kicker relative z-10 font-mono text-sm text-lime-300/90">
                 {"// desenvolvimento de sistemas & tecnologia"}
@@ -72,14 +78,14 @@ export function Header() {
                 </h1>
                 <p className="hero-description text-balance text-base leading-relaxed text-muted-foreground md:text-lg">
                     Meu primeiro contato com programação foi em 2020, com JavaScript. Desde então, construí uma trajetória
-                    que hoje passa por Next.js, React Native, Delphi e Java Spring. Este site reúne alguns dos projetos que
+                    que hoje passa por Next.js, React Native, Delphi e, mais recentemente, Go. Este site reúne alguns dos projetos que
                     desenvolvi e os serviços em tecnologia que ofereço — um ponto de contato direto para clientes e parceiros.
                 </p>
             </div>
 
             <div className="hero-cta relative z-10">
                 <ButtonScroll targedDiv="projetos">
-                    <span className="inline-flex items-center gap-2 rounded-md border border-lime-300/40 px-5 py-2.5 text-sm font-semibold text-lime-300 transition-all duration-300 hover:bg-lime-300 hover:text-zinc-950 hover:shadow-[0_0_24px_rgba(190,242,100,0.35)]">
+                    <span className="inline-flex items-center gap-2 rounded-md border border-lime-300/40 px-5 py-2.5 text-sm font-semibold text-lime-300 shadow-[0_0_0_1px_rgba(190,242,100,0.15),0_4px_18px_-4px_rgba(190,242,100,0.25)] transition-all duration-300 hover:bg-lime-300 hover:text-zinc-950 hover:shadow-[0_0_28px_-2px_rgba(190,242,100,0.5)]">
                         Ver projetos
                     </span>
                 </ButtonScroll>

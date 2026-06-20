@@ -3,7 +3,6 @@ import { Cog } from 'lucide-react';
 import { SectionProjectCard } from './section-project-cards';
 import pertelImg from "../../public/pertel.png";
 import speedImg from "../../public/speed.png";
-import speedLoginImg from "../../public/speed-login.jpeg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const techBadgeClass = "rounded-lg bg-lime-300 px-2 py-1 text-sm font-semibold text-zinc-950";
@@ -39,14 +38,6 @@ export function ProjectSection() {
                         <span className={techBadgeClass}>NextJS</span>
                         <span className={techBadgeClass}>Prisma</span>
                         <span className={techBadgeClass}>PostgreSQL</span>
-                    </SectionProjectCard>
-                </div>
-                <div className="reveal-item">
-                    <SectionProjectCard image={speedLoginImg} title='Speed Restaurante' site="/speed-mobile">
-                        <span className={techBadgeClass}>Typescript</span>
-                        <span className={techBadgeClass}>React Native</span>
-                        <span className={techBadgeClass}>NodeJS</span>
-                        <span className={techBadgeClass}>FirebirdSQL</span>
                     </SectionProjectCard>
                 </div>
             </section>

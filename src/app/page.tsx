@@ -1,5 +1,4 @@
 import { Footer } from "@/components/footer";
-import { FooterSection } from "@/components/footer-section";
 import { Header } from "@/components/header";
 import { Navbar } from "@/components/navbar";
 import { ProjectSection } from "@/components/project-section";
@@ -16,7 +15,6 @@ export default function Home() {
       <SectionSkills />
       <div className="mx-auto h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-lime-300/30 to-transparent" />
       <ProjectSection />
-      <FooterSection />
       <Footer />
     </main>
   );

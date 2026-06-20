@@ -54,12 +54,12 @@ export function TopHome() {
                 </p>
                 <div className="mt-3 flex flex-wrap gap-4">
                     <ButtonScroll targedDiv="contato">
-                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md bg-lime-300 px-5 py-2.5 font-bold text-zinc-950 transition-all duration-200 hover:brightness-90 hover:shadow-[0_0_20px_rgba(190,242,100,0.4)]">
+                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md bg-lime-300 px-5 py-2.5 font-bold text-zinc-950 shadow-[0_0_0_1px_rgba(190,242,100,0.25),0_4px_18px_-2px_rgba(190,242,100,0.3)] transition-all duration-300 hover:brightness-90 hover:shadow-[0_0_0_1px_rgba(190,242,100,0.4),0_8px_30px_-4px_rgba(190,242,100,0.55)]">
                             Contato
                         </span>
                     </ButtonScroll>
                     <ButtonScroll targedDiv="projetos">
-                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md border border-foreground/30 px-5 py-2.5 font-bold transition-all duration-200 hover:border-foreground hover:bg-foreground/5">
+                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md border border-foreground/30 px-5 py-2.5 font-bold transition-all duration-300 hover:border-lime-300/60 hover:bg-foreground/5 hover:shadow-[0_0_24px_-4px_rgba(190,242,100,0.35)]">
                             Projetos
                         </span>
                     </ButtonScroll>

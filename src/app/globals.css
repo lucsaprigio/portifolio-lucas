@@ -96,9 +96,22 @@
   .mask-fade-bottom {
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
+
+  /* Glow lime sutil para botões/CTAs em repouso e hover — usado para dar um acabamento "premium"
+     consistente em toda chamada de ação do site, sem poluir a interface. */
+  .shadow-glow-lime {
+    box-shadow: 0 0 0 1px rgba(190, 242, 100, 0.25), 0 4px 18px -2px rgba(190, 242, 100, 0.25);
+  }
+  .shadow-glow-lime-hover {
+    transition-property: box-shadow, transform, filter, background-color, border-color, color;
+    transition-duration: 300ms;
+  }
+  .shadow-glow-lime-hover:hover {
+    box-shadow: 0 0 0 1px rgba(190, 242, 100, 0.4), 0 8px 28px -4px rgba(190, 242, 100, 0.45);
+  }
 }
 
-/* Scrollbar customizada, alinhada à cor de destaque já usada no site */
+/* Scrollbar customizada, na cor de destaque (lime-300 / #bef264) sobre track discreta no fundo escuro */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -106,9 +119,15 @@
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.4);
+  background: rgba(190, 242, 100, 0.45);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.6);
+  background: rgba(190, 242, 100, 0.75);
+}
+
+/* Firefox */
+html {
+  scrollbar-color: rgba(190, 242, 100, 0.45) hsl(var(--background));
+  scrollbar-width: thin;
 }

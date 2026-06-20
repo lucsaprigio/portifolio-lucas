@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
+import { StarfieldBackground } from "@/components/starfield-background";
 
 const firaCode = Fira_Code({
   weight: '400',
@@ -22,13 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark" style={{ colorScheme: "dark" }}>
-      <body className={`${firaCode.className} bg-background text-foreground selection:bg-lime-300/30`}>
+      {/* bg-background fica só como fallback (ex: antes do canvas montar / JS desabilitado);
+          o fundo visível real é pintado pelo StarfieldBackground, fixo atrás de todo o conteúdo. */}
+      <body className={`${firaCode.className} bg-background text-foreground selection:bg-lime-300/30 overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
+          <StarfieldBackground />
           {children}
         </ThemeProvider>
       </body>
