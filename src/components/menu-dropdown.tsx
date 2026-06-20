@@ -16,14 +16,14 @@ export function MenuDropdown() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <button className="text-lime-300">
-                    <FaBars size={38} />
+                <button className="text-lime-300 transition-transform duration-200 hover:scale-110 active:scale-95" aria-label="Abrir menu de navegação">
+                    <FaBars size={32} />
                 </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="flex flex-col items-center justify-center space-y-2 w-80 bg-slate-950 text-white">
-                <DropdownMenuLabel>Menu</DropdownMenuLabel>
+            <DropdownMenuContent className="flex flex-col items-center justify-center space-y-2 w-72 glass-panel text-foreground">
+                <DropdownMenuLabel className="text-muted-foreground">Menu</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuGroup className="flex flex-col space-y-7">
+                <DropdownMenuGroup className="flex flex-col space-y-7 py-2">
                     <DropdownMenuItem>
                         <ButtonScroll targedDiv="sobre">
                             Sobre

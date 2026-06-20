@@ -12,9 +12,9 @@ export default function Home() {
       <Navbar />
       <Header />
       <TopHome />
-      <div className="border-t-[1px] border-lime-300 opacity-25 px-2" />
+      <div className="mx-auto h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-lime-300/30 to-transparent" />
       <SectionSkills />
-      <div className="border-t-[1px] border-lime-300 opacity-25 px-2" />
+      <div className="mx-auto h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-lime-300/30 to-transparent" />
       <ProjectSection />
       <FooterSection />
       <Footer />

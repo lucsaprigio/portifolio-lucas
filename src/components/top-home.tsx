@@ -1,74 +1,68 @@
 'use client'
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { ButtonScroll } from "./button-scroll";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
+const socialLinks = [
+    { href: "https://www.instagram.com/lucsaprigio/", label: "Instagram", icon: FaInstagram },
+    { href: "https://www.linkedin.com/in/lucas-aprigio-3b17521a5/", label: "Linkedin", icon: FaLinkedin },
+    { href: "https://github.com/lucsaprigio", label: "Github", icon: FaGithub },
+];
 
 export function TopHome() {
-    return (
-        <main className="flex flex-row items-center justify-around px-20 py-32 max-lg:flex-col max-lg:p-1" id="sobre">
-            <div className="flex flex-col p-10 w-full items-center justify-center space-y-3">
-                <Image
-                    className="border-2 border-lime-300 p-1 rounded-full"
-                    width={240}
-                    height={240}
-                    objectFit="contain"
-                    src="https://github.com/lucsaprigio.png"
-                    alt="Imagem"
-                />
-                <div className="flex space-x-10 max-lg:hidden">
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.instagram.com/lucsaprigio/" target="blank">
-                        <FaInstagram size={24} />
-                    </Link>
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.linkedin.com/in/lucas-aprigio-3b17521a5/" target="blank">
-                        <FaLinkedin size={24} />
-                    </Link>
-                    <Link className="flex gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://github.com/lucsaprigio" target="blank">
-                        <FaGithub size={24} />
-                    </Link>
-                </div>
-                <div className="flex space-x-10 md:hidden">
-                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.instagram.com/lucsaprigio/" target="blank">
-                        <FaInstagram size={32} />
-                        <span>Instagram</span>
-                    </Link>
-                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://www.linkedin.com/in/lucas-aprigio-3b17521a5/" target="blank">
-                        <FaLinkedin size={32} />
-                        <span>Linkedin</span>
+    const sectionRef = useScrollReveal<HTMLDivElement>({ targets: ".reveal-item", y: 28 });
 
-                    </Link>
-                    <Link className="flex flex-col gap-3 items-center justify-center text-lime-300 hover:scale-105 duration-150 transition-all" href="https://github.com/lucsaprigio" target="blank">
-                        <FaGithub size={32} />
-                        <span>Github</span>
-                    </Link>
+    return (
+        <main ref={sectionRef} className="flex flex-col items-center gap-16 px-6 py-24 md:flex-row md:items-center md:justify-around md:px-20 md:py-32" id="sobre">
+            <div className="reveal-item flex w-full flex-col items-center justify-center gap-6">
+                <div className="group relative">
+                    <div className="absolute inset-0 rounded-full bg-lime-300/20 blur-2xl transition-opacity duration-500 group-hover:opacity-80" aria-hidden="true" />
+                    <Image
+                        className="relative rounded-full border-2 border-lime-300 p-1 transition-transform duration-500 group-hover:scale-105"
+                        width={240}
+                        height={240}
+                        src="https://github.com/lucsaprigio.png"
+                        alt="Foto de Lucas Aprigio"
+                    />
+                </div>
+                <div className="flex gap-8">
+                    {socialLinks.map(({ href, label, icon: Icon }) => (
+                        <Link
+                            key={label}
+                            className="flex flex-col items-center gap-2 text-lime-300 transition-all duration-200 hover:-translate-y-1 hover:text-lime-200"
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={label}
+                        >
+                            <Icon size={26} />
+                            <span className="text-xs text-muted-foreground md:hidden">{label}</span>
+                        </Link>
+                    ))}
                 </div>
             </div>
-            <div className="flex flex-col w-full p-10 justify-center space-y-5">
-                <span>Olá, me chamo</span>
-                <strong className="text-3xl">Lucas Aprigio 👋</strong>
-                <div className="border-b-2 border-lime-300 w-32" />
-                <span className="text-md">
+            <div className="reveal-item flex w-full flex-col gap-5">
+                <span className="font-mono text-sm text-lime-300/90">{"// sobre mim"}</span>
+                <strong className="text-3xl font-bold tracking-tight md:text-4xl">Lucas Aprigio 👋</strong>
+                <div className="h-0.5 w-28 rounded-full bg-lime-300" />
+                <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
                     Sou formado em Análise e Desenvolvimento de Sistemas e comecei minha jornada profissional focado na criação de sites.
                     Com o tempo, fui além, desenvolvendo uma variedade de aplicações que enriqueceram meu conhecimento.
                     Hoje, sou especialista na criação de APIs robustas e aplicativos mobile inovadores, combinando expertise técnica com criatividade para entregar soluções impactantes.
-                </span>
-                <div className="flex gap-4 mt-3">
+                </p>
+                <div className="mt-3 flex flex-wrap gap-4">
                     <ButtonScroll targedDiv="contato">
-                        <div className="md:w-40 font-bold hover:brightness-75 duration-100 transition-all bg-lime-300 p-1 rounded-md text-zinc-950">
-                            <span>
-                                Contato
-                            </span>
-                        </div>
+                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md bg-lime-300 px-5 py-2.5 font-bold text-zinc-950 transition-all duration-200 hover:brightness-90 hover:shadow-[0_0_20px_rgba(190,242,100,0.4)]">
+                            Contato
+                        </span>
                     </ButtonScroll>
                     <ButtonScroll targedDiv="projetos">
-                        <div className="md:w-40 font-bold hover:brightness-75 hover:bg-gray-50 hover:text-zinc-950 duration-100 transition-all border-[1px] p-1 rounded-md">
-                            <span >
-                                Projetos
-                            </span>
-                        </div>
+                        <span className="inline-flex w-full min-w-40 items-center justify-center rounded-md border border-foreground/30 px-5 py-2.5 font-bold transition-all duration-200 hover:border-foreground hover:bg-foreground/5">
+                            Projetos
+                        </span>
                     </ButtonScroll>
-
                 </div>
             </div>
         </main>

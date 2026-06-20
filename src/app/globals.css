@@ -63,7 +63,52 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    @apply bg-lime-300/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Grid de fundo sutil, estilo "blueprint", usado como textura de profundidade nas seções */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Painel "glass" reutilizado em cards e navbar, respeitando as variáveis de cor do tema */
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)];
+  }
+
+  /* Texto com leve glow na cor de destaque, usado com moderação em títulos */
+  .text-glow {
+    text-shadow: 0 0 24px hsl(var(--lime-glow, 100 80% 70%) / 0.35);
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+}
+
+/* Scrollbar customizada, alinhada à cor de destaque já usada no site */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.6);
 }

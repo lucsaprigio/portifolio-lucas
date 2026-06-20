@@ -21,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${firaCode.className} bg-gradient-to-b from-slate-900 to-slate-800 text-gray-100`}>
+    <html lang="pt-BR" className="dark" style={{ colorScheme: "dark" }}>
+      <body className={`${firaCode.className} bg-background text-foreground selection:bg-lime-300/30`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
