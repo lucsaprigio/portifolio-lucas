@@ -14,6 +14,7 @@ import reactSvg from "../../public/react.svg";
 import nodejs from "../../public/nodejs.svg";
 import typescriptSvg from "../../public/typescript.svg";
 import golangSvg from "../../public/golang.svg";
+import javaSvg from "../../public/java.svg";
 
 type TimelineItem = {
     id: string;
@@ -58,6 +59,14 @@ const timeline: TimelineItem[] = [
         duration: "3 anos — atualmente",
         description:
             "Tecnologia que utilizo até hoje no dia a dia, na manutenção do sistema da empresa onde trabalho e na criação de relatórios com o FastReport. Continuo atuando ativamente nela em paralelo com o restante da minha stack.",
+    },
+    {
+        id: "java",
+        name: "Java / Spring Boot",
+        icon: javaSvg,
+        duration: "3 anos",
+        description:
+            "Trabalhei por 3 anos com Java utilizando o Spring Boot no desenvolvimento de aplicações back-end. Atuei na construção de APIs REST reais em produção, com autenticação via JWT, persistência com JPA, geração de relatórios com JasperReports e integrações com documentos fiscais eletrônicos (DF-e). Implementei mensageria com RabbitMQ para tornar a aplicação escalável: o fluxo de XML de uma empresa levava cerca de 120 segundos na compactação e envio por e-mail, então passei esse processamento para uma fila, liberando a requisição e fazendo o envio de forma assíncrona.",
     },
     {
         id: "go",

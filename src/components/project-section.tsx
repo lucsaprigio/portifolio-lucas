@@ -2,7 +2,7 @@
 import { Cog } from 'lucide-react';
 import { SectionProjectCard } from './section-project-cards';
 import pertelImg from "../../public/pertel.png";
-import speedImg from "../../public/speed.png";
+import javaImg from "../../public/java.svg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const techBadgeClass = "rounded-lg bg-lime-300 px-2 py-1 text-sm font-semibold text-zinc-950";
@@ -33,11 +33,14 @@ export function ProjectSection() {
                     </SectionProjectCard>
                 </div>
                 <div className="reveal-item">
-                    <SectionProjectCard image={speedImg} title='Speed Automac' site="https://speedautomac.com.br">
-                        <span className={techBadgeClass}>Typescript</span>
-                        <span className={techBadgeClass}>NextJS</span>
-                        <span className={techBadgeClass}>Prisma</span>
-                        <span className={techBadgeClass}>PostgreSQL</span>
+                    <SectionProjectCard image={javaImg} title='API REST - XML' site="">
+                        <span className={techBadgeClass}>Java</span>
+                        <span className={techBadgeClass}>Spring Boot</span>
+                        <span className={techBadgeClass}>JWT</span>
+                        <span className={techBadgeClass}>JPA</span>
+                        <span className={techBadgeClass}>JasperReports</span>
+                        <span className={techBadgeClass}>RabbitMQ</span>
+                        <span className={techBadgeClass}>DF-e</span>
                     </SectionProjectCard>
                 </div>
             </section>
