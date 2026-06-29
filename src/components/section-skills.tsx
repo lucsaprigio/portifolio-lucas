@@ -58,7 +58,7 @@ const timeline: TimelineItem[] = [
         icon: delphiSvg,
         duration: "3 anos — atualmente",
         description:
-            "Tecnologia que utilizo até hoje no dia a dia, na manutenção do sistema da empresa onde trabalho e na criação de relatórios com o FastReport. Continuo atuando ativamente nela em paralelo com o restante da minha stack.",
+            "Tecnologia que utilizo até hoje no dia a dia, na manutenção do sistema da empresa onde trabalho e na criação de relatórios com o FastReport. Atualmente trabalho com Delphi e Go, e entre as integrações mais recentes que desenvolvi estão a do Melhor Envio e as das APIs do Sicredi e do Banco do Brasil.",
     },
     {
         id: "java",
@@ -72,9 +72,9 @@ const timeline: TimelineItem[] = [
         id: "go",
         name: "Go",
         icon: golangSvg,
-        duration: "1 mês",
+        duration: "atualmente",
         description:
-            "Minha tecnologia mais recente de estudo. Ainda não tive a oportunidade de usá-la profissionalmente, mas tenho me dedicado a aprender por conta própria, atraído pela simplicidade da sintaxe e pela performance em aplicações concorrentes.",
+            "Tecnologia que utilizo atualmente no dia a dia, em paralelo com o Delphi. Fui atraído pela simplicidade da sintaxe e pela performance em aplicações concorrentes, e venho aplicando isso em integrações recentes, como a do Melhor Envio e as das APIs do Sicredi e do Banco do Brasil.",
     },
 ];
 
